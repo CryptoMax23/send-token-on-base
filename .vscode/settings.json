@@ -1,5 +1,7 @@
 {
   "solidity.remappings": [
-    "@eth-optimism/contracts-bedrock/=./node_modules/@eth-optimism/contracts-bedrock/src"
-  ]
+    "@eth-optimism/contracts-bedrock/=./node_modules/@eth-optimism/contracts-bedrock/src",
+    "@openzeppelin/=./lib/openzeppelin-contracts/"
+  ],
+  "solidity.compileUsingRemoteVersion": "v0.8.15+commit.e14f2714"
 }
