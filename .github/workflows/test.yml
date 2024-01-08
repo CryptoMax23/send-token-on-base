@@ -29,8 +29,12 @@ jobs:
         with:
           version: nightly
 
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Run Forge build
         run: |
+          bun install --frozen-lockfile
           forge --version
           forge build --sizes
         id: build
