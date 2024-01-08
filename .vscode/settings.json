@@ -1,0 +1,5 @@
+{
+  "solidity.remappings": [
+    "@eth-optimism/contracts-bedrock/=./node_modules/@eth-optimism/contracts-bedrock/src"
+  ]
+}
