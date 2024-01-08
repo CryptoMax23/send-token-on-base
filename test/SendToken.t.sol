@@ -2,24 +2,21 @@
 pragma solidity ^0.8.13;
 
 import {Test, console2} from "forge-std/Test.sol";
+import {Constants} from "../src/Constants.sol";
 import {SendToken} from "../src/SendToken.sol";
 
-contract SendTokenTest is Test {
+contract SendTokenTest is Test, Constants {
     SendToken public sendToken;
-    address public sendDeployer = 0x647eb43401e13e995D89Cf26cD87e68890EE3f89;
 
     function setUp() public {
-        vm.label(sendDeployer, "Send Deployer");
-        vm.prank(sendDeployer);
+        this.labels();
+        vm.prank(SEND_DEPLOYER);
         sendToken = new SendToken();
     }
 
     function test_AddressEquals() public {
         console2.log("Send Token address", address(sendToken));
-        assertEq(
-            address(sendToken),
-            0x3f14920c99BEB920Afa163031c4e47a3e03B3e4A
-        );
+        assertEq(address(sendToken), SEND_TOKEN_L1);
     }
 
     function test_Decimals() public {
