@@ -1,0 +1,14 @@
+{
+  "name": "send-token-on-base",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@eth-optimism/contracts-bedrock": "^0.16.2"
+  }
+}
