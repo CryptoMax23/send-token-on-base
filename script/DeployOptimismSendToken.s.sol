@@ -11,6 +11,7 @@ contract DeployOptimismSendTokenScript is Script, Constants {
     }
 
     function run() public {
+        vm.startBroadcast();
         // Deploy SendToken
         SendToken sendToken = new SendToken();
 
@@ -23,6 +24,6 @@ contract DeployOptimismSendTokenScript is Script, Constants {
             console2.log("Deploying SendToken from ", msg.sender);
         }
 
-        vm.broadcast();
+        vm.stopBroadcast();
     }
 }

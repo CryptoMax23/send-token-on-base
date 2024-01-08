@@ -4,8 +4,28 @@ Deploying Send token to Base using Optimism Standard Bridge.
 
 ## Deploying
 
+### Provide ETH to Send Deployer on Anvil
+
 ```shell
-forge script ./packages/contracts/script/DeploySendMerkleDrop.s.sol:DeploySendMerkleDropScript \
+cast send --rpc-url http://localhost:8546 \
+            --unlocked \
+            --from 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 \
+            0x647eb43401e13e995d89cf26cd87e68890ee3f89 \
+            --value 10ether
+```
+
+### Deploy SendToken on Anvil using `forge create`
+
+```shell
+forge create src/SendToken.sol:SendToken \
+  --rpc-url http://localhost:8546 \
+  --from 0x647eb43401e13e995d89cf26cd87e68890ee3f89
+```
+
+### Deploy SendToken on Anvil using `forge script`
+
+```shell
+forge script ./script/DeployOptimismSendToken.s.sol:DeployOptimismSendTokenScript \
   -vvvv \
   --rpc-url http://localhost:8546 \
   --sender 0x647eb43401e13e995d89cf26cd87e68890ee3f89 \
