@@ -19,7 +19,8 @@ cast send --rpc-url http://localhost:8546 \
 ```shell
 forge create src/SendToken.sol:SendToken \
   --rpc-url http://localhost:8546 \
-  --from 0x647eb43401e13e995d89cf26cd87e68890ee3f89
+  --from 0x647eb43401e13e995d89cf26cd87e68890ee3f89 \
+  --keystore ~/.foundry/keystores/send_deploye
 ```
 
 ### Deploy SendToken on Anvil using `forge script`
